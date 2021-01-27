@@ -7,3 +7,7 @@ body {
   background-size: cover;
   background-position: center;
 };
+
+.input-group{
+  display: block;
+}
