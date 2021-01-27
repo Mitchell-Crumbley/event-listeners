@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="main.css" />
-    <title>Objects, DOM, and Events</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+  <link rel="stylesheet" href="main.css" />
+  <title>Objects, DOM, and Events</title>
+</head>
+
+<body>
+
+  <form>
     <div class="container mt-3 text-center">
       <div id="instructor-buttons">
         <button type="button" class="btn btn-primary" id="All">All</button>
@@ -22,14 +22,62 @@
       </div>
       <div id="pies" class="d-flex flex-wrap justify-content-around"></div>
       <hr />
-      <div class="pie-form"></div>
-    </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
-    <script src="main.js"></script>
-  </body>
+      <div class="pie-form">
+
+        <form>
+
+          <div class="mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Pie Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Pie name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="ingredients" class="col-sm-2 col-form-label">Ingredients</label>
+            <input type="text" class="form-control" id="ingredients" placeholder="What is in it?" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="bakeTemp" class="col-sm-2 col-form-label">Bake Temp</label>
+            <input type="number" class="form-control" id="bakeTemp" placeholder="How hot?" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="drinkPairing" class="col-sm-2 col-form-label">Drink Pariing</label>
+            <input type="text" class="form-control" id="drinkPairing" placeholder="Wash it down with?" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="imageUrl" class="col-sm-2 col-form-label">ImageURL</label>
+            <input type="url" class="form-control" id="imageUrl" placeholder="What does it look like?" required>
+          </div>
+
+          <label for="imageURL" class="col-sm-2 col-form-label">Instructor</label>
+          <select class="form-select" id="instructor" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="Doc">Doctor T.</option>
+            <option value="Aja">Aja</option>
+            <option value="Trinity">Trinity</option>
+          </select>
+
+          <div class="mb-3">
+            <label for="iceCream" class="col-sm-2 col-form-label">Ice Cream</label>
+            <input type="text" class="form-control" id="iceCream" placeholder="Ice Cream?" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+
+  </form>
+
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+
 </html
