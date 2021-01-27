@@ -68,6 +68,7 @@ const printToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
+//Creates a pie container card on the DOM
 const pieBuilder = (taco) => {
   let domString = '';
   for (let i = 0; i < taco.length; i++) {
@@ -123,12 +124,51 @@ const handleButtonClick = (e) => {
 
 }
 
+//C in CRUD: Create new pies
+const getFormInfo = (e) => {
+  e.preventDefault(); //Stops page from refreshing
+
+  //Grabbing all the values of the input form fields
+  const name = document.querySelector('#name').value;
+  const ingredients = document.querySelector('#ingredients').value;
+  const bakeTemp = document.querySelector('#bakeTemp').value;
+  const drinkPairing = document.querySelector('#drinkPairing').value;
+  const imageUrl = document.querySelector('#imageUrl').value;
+  const instructor = document.querySelector('#instructor').value;
+  const iceCream = document.querySelector('#iceCream').value;
+
+  //shorthand object notation to add values to objects
+  const obj = {
+    name,
+    ingredients,
+    bakeTemp,
+    drinkPairing,
+    imageUrl,
+    instructor,
+    iceCream,
+  }
+
+  //pushing new object up the pies array.
+  pies.push(obj);
+
+  //Rebuilding the DOM
+  pieBuilder(pies);
+
+  //Reset the form after the submit button is click
+  document.querySelector('form').reset();
+
+  console.log(obj);
+};
+
+//On click event that are dealing with buttons on the page.
 const buttonEvents = () => {
   document.querySelector('#All').addEventListener('click', handleButtonClick);
   document.querySelector('#Doc').addEventListener('click', handleButtonClick);
   document.querySelector('#Aja').addEventListener('click', handleButtonClick);
   document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+  document.querySelector('form').addEventListener('submit', getFormInfo);
 }
+
 
 const init = () => {
   buttonEvents();
