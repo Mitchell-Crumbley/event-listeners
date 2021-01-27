@@ -63,6 +63,9 @@ const pies = [
   },
 ];
 
+let filtered = false;
+const selectedPies = [];
+
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
@@ -117,11 +120,15 @@ const handleButtonClick = (e) => {
 
   if (buttonId === 'All') {
     // PRINT ALL THE PIES
+    filtered = false;
     pieBuilder(pies);
   } else {
+    filtered = true;
     pieBuilder(selectedPies);
   }
 
+
+  console.log(filtered);
 }
 
 //C in CRUD: Create new pies
@@ -160,13 +167,32 @@ const getFormInfo = (e) => {
   console.log(obj);
 };
 
+//D in CRUD: Delete the pies
+const deletePie = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+
+  if (targetType === 'button') {
+    //DO SOMETHING
+    pies.splice(targetId, 1);
+  }
+  //Runs the pieBuilder function to update the DOM after splicing the targetedId to deleted. TLDR makes delete button delete from the DOM.
+  pieBuilder(pies);
+}
+
 //On click event that are dealing with buttons on the page.
 const buttonEvents = () => {
   document.querySelector('#All').addEventListener('click', handleButtonClick);
   document.querySelector('#Doc').addEventListener('click', handleButtonClick);
   document.querySelector('#Aja').addEventListener('click', handleButtonClick);
   document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+
+  //Targeting the delete button Do not forget to update second half to deletePie function as the target after finishing.
+  document.querySelector('#pies').addEventListener('click', deletePie);
+
+  //Targing the submit button in the new pie form.
   document.querySelector('form').addEventListener('submit', getFormInfo);
+
 }
 
 
